@@ -11,18 +11,13 @@ var Friend = /** @class */ (function () {
 }());
 var FriendListMaker = /** @class */ (function () {
     function FriendListMaker() {
-        var _this = this;
-        var createListButton = document.getElementById("CreateButton");
-        createListButton.addEventListener("click", function (e) { return _this.createFriendList(); });
     }
     FriendListMaker.prototype.createFriendList = function () {
-        var currentList = new FriendList();
-        currentList.name = document.getElementById("FriendListName").value;
-        document.getElementById("FriendListHeader").innerHTML = currentList.name;
-        document.getElementById("FriendListItems").innerHTML = "";
-        document.getElementById("CreateListView").hidden = true;
-        document.getElementById("FriendListView").style.display = "inline-block";
-        this.prepareFriendList();
+        var _this = this;
+        var createListButton = document.getElementById("CreateButton");
+        if (createListButton != null) {
+            createListButton.addEventListener("click", function (e) { return _this.prepareFriendList(); });
+        }
     };
     FriendListMaker.prototype.prepareFriendList = function () {
         var _this = this;
@@ -31,12 +26,10 @@ var FriendListMaker = /** @class */ (function () {
     };
     FriendListMaker.prototype.addFriendToList = function () {
         var newFriendName = document.getElementById("NewFriendName").value;
-        var friendList = document.getElementById("FriendListItems");
-        var newFriend = new Friend(newFriendName);
     };
     return FriendListMaker;
 }());
 window.onload = function () {
     var maker = new FriendListMaker();
+    maker.createFriendList();
 };
-//# sourceMappingURL=FriendListController.js.map

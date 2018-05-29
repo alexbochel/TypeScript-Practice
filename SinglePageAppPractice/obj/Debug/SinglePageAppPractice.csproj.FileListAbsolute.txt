@@ -55,3 +55,4 @@ C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debu
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.csproj.CopyComplete
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.dll
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.pdb
+C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.csprojAssemblyReference.cache
