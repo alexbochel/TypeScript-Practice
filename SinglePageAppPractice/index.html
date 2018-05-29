@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="styles.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <script src="Scripts/FriendListController.js"></script>
+    <title> Did it work? </title>
+</head>
+<body>
+    <div id="CreateListView">
+        <h1>Best Friend List</h1>
+        <input type="text" id="FriendListName" placeholder="New Friend List!"/>
+        <button id="CreateButton" value="click">Create</button>
+    </div>
+    <div id="FriendListView" style="display:none">
+        <h1 id="FriendListHeader">New List</h1>
+        <input id="NewFriendName" type="text" placeholder="New Friend!"/>
+        <button id="AddFriendButton" value="click">Add</button>
+        <ul id="FriendListItems">
+            <li>Alex<button>Eliminate</button></li>
+            <li>Not Ethan<button>Eliminate</button></li>
+        </ul>
+    </div>
+</body>
+</html>
