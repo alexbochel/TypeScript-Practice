@@ -51,7 +51,6 @@ C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\bin\rosl
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.csprojAssemblyReference.cache
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.csproj.CoreCompileInputs.cache
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.csproj.CopyComplete
 C:\Users\axb11\source\repos\SinglePageAppPractice\SinglePageAppPractice\obj\Debug\SinglePageAppPractice.dll

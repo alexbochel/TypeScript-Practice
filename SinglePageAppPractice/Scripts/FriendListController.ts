@@ -18,9 +18,7 @@ class FriendListMaker {
 
     constructor() {
         const createListButton = document.getElementById("CreateButton");
-        const addFriendButton = document.getElementById("AddButton");
         createListButton.addEventListener("click", (e: Event) => this.createFriendList());
-        addFriendButton.addEventListener("click", (e:Event) => this.addFriendToList());
     }
 
     createFriendList() {
@@ -30,6 +28,12 @@ class FriendListMaker {
         document.getElementById("FriendListItems").innerHTML = "";
         document.getElementById("CreateListView").hidden = true;
         document.getElementById("FriendListView").style.display = "inline-block";
+        this.prepareFriendList();
+    }
+
+    prepareFriendList() {
+        const addFriendButton = document.getElementById("AddFriendButton");
+        addFriendButton.addEventListener("click", (e: Event) => this.addFriendToList());
     }
 
     addFriendToList() {

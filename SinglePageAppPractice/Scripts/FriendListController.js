@@ -13,9 +13,7 @@ var FriendListMaker = /** @class */ (function () {
     function FriendListMaker() {
         var _this = this;
         var createListButton = document.getElementById("CreateButton");
-        var addFriendButton = document.getElementById("AddButton");
         createListButton.addEventListener("click", function (e) { return _this.createFriendList(); });
-        addFriendButton.addEventListener("click", function (e) { return _this.addFriendToList(); });
     }
     FriendListMaker.prototype.createFriendList = function () {
         var currentList = new FriendList();
@@ -24,6 +22,12 @@ var FriendListMaker = /** @class */ (function () {
         document.getElementById("FriendListItems").innerHTML = "";
         document.getElementById("CreateListView").hidden = true;
         document.getElementById("FriendListView").style.display = "inline-block";
+        this.prepareFriendList();
+    };
+    FriendListMaker.prototype.prepareFriendList = function () {
+        var _this = this;
+        var addFriendButton = document.getElementById("AddFriendButton");
+        addFriendButton.addEventListener("click", function (e) { return _this.addFriendToList(); });
     };
     FriendListMaker.prototype.addFriendToList = function () {
         var newFriendName = document.getElementById("NewFriendName").value;
