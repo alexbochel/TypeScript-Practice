@@ -9,7 +9,7 @@
 class Friend {
     name: string;
 
-    constructor(newName) {
+    constructor(newName: string) {
         this.name = newName;
     }
 }
@@ -38,15 +38,38 @@ class FriendListMaker {
 
     addFriendToList() {
         const newFriendName = (document.getElementById("NewFriendName") as HTMLInputElement).value;
-        const friendList = document.getElementById("FriendListItems");
-        const newFriend = new Friend(newFriendName);
+
+        if (newFriendName) {
+            const newFriend = new Friend(newFriendName);
+            this.drawFriendList(newFriend);
+            (document.getElementById("NewFriendName") as HTMLInputElement).value = "";
+        }
     }
 
-    //drawFriendList() {
-    //    for (let i = 0; i < currentList.items.length; i++) {
+    deleteFriendFromList(children: Number, li) {
+        document.getElementById("FriendListItems").removeChild(li);
+    }
 
-    //    }
-    //}
+    drawFriendList(newFriend: Friend) {
+        const li = document.createElement("li");
+        const ul = document.getElementById("FriendListItems");
+        const liDeleteButton = document.createElement("button");
+        const children = ul.children.length + 1;
+
+        liDeleteButton.setAttribute("id", `DeleteButtonNumber${children}`);
+        liDeleteButton.setAttribute("value", "click");
+        li.setAttribute("id", `friend${children}`);
+        li.appendChild(document.createTextNode(`${newFriend.name}`));
+        li.appendChild(liDeleteButton);
+        ul.appendChild(li);
+
+        liDeleteButton.addEventListener("click", (e: Event) => this.deleteFriendFromList(children, li));
+    }
+
+    setupFriendDeleteButton() {
+        const friendDeleteButton = document.createElement("button");
+        return friendDeleteButton;
+    }
 }
 
 window.onload = () => {
