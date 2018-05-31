@@ -1,9 +1,5 @@
 ﻿class FriendList {
     name: string;
-
-    constructor() {
-
-    }
 }
 
 class Friend {
@@ -28,10 +24,10 @@ class FriendListMaker {
         document.getElementById("FriendListItems").innerHTML = "";
         document.getElementById("CreateListView").hidden = true;
         document.getElementById("FriendListView").style.display = "inline-block";
-        this.prepareFriendList();
+        this.addEventHandlerToAddFriendButton();
     }
 
-    prepareFriendList() {
+    addEventHandlerToAddFriendButton() {
         const addFriendButton = document.getElementById("AddFriendButton");
         addFriendButton.addEventListener("click", (e: Event) => this.addFriendToList());
     }
@@ -53,22 +49,26 @@ class FriendListMaker {
     drawFriendList(newFriend: Friend) {
         const li = document.createElement("li");
         const ul = document.getElementById("FriendListItems");
-        const liDeleteButton = document.createElement("button");
         const children = ul.children.length + 1;
+        const liDeleteButton = this.setupFriendDeleteButton(children);
 
-        liDeleteButton.setAttribute("id", `DeleteButtonNumber${children}`);
-        liDeleteButton.setAttribute("value", "click");
-        li.setAttribute("id", `friend${children}`);
-        li.appendChild(document.createTextNode(`${newFriend.name}`));
-        li.appendChild(liDeleteButton);
-        ul.appendChild(li);
+        this.setupNewFriendListElement(li, ul, liDeleteButton, children, newFriend);
 
         liDeleteButton.addEventListener("click", (e: Event) => this.deleteFriendFromList(children, li));
     }
 
-    setupFriendDeleteButton() {
-        const friendDeleteButton = document.createElement("button");
-        return friendDeleteButton;
+    setupNewFriendListElement(li: HTMLElement, ul: HTMLElement, liDeleteButton: HTMLElement, children: Number, newFriend: Friend) {
+        li.setAttribute("id", `friend${children}`);
+        li.appendChild(document.createTextNode(`${newFriend.name}`));
+        li.appendChild(liDeleteButton);
+        ul.appendChild(li);
+    }
+
+    setupFriendDeleteButton(children: Number) {
+        const liDeleteButton = document.createElement("button");
+        liDeleteButton.setAttribute("id", `DeleteButtonNumber${children}`);
+        liDeleteButton.setAttribute("value", "click");
+        return liDeleteButton;
     }
 }
 
